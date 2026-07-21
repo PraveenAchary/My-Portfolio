@@ -323,6 +323,75 @@
             box-shadow: 0 5px 15px rgba(112, 0, 255, 0.2);
         }
 
+        /* --- EXPERIENCE --- */
+        .exp-timeline { display: flex; flex-direction: column; gap: 25px; margin-top: 2rem; }
+
+        .exp-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .exp-card:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+        }
+
+        .exp-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+        .exp-role { font-family: var(--font-display); font-size: 1.3rem; }
+        .exp-date { color: var(--secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .exp-org { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; display: block; }
+        .exp-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .exp-list li { color: var(--text-muted); font-size: 0.95rem; padding-left: 22px; position: relative; }
+        .exp-list li::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--accent); position: absolute; left: 0; }
+        .exp-list li a { color: var(--secondary); text-decoration: none; }
+        .exp-list li a:hover { text-decoration: underline; }
+
+        /* --- CERTIFICATIONS --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .cert-icon {
+            width: 46px; height: 46px;
+            min-width: 46px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .cert-body h4 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; }
+        .cert-body .cert-issuer { color: var(--secondary); font-size: 0.85rem; margin-bottom: 8px; display: block; }
+        .cert-body p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+        .cert-link { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
+        .cert-link:hover { color: var(--accent); gap: 10px; }
+
         /* --- PORTFOLIO --- */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
@@ -559,7 +628,9 @@
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#portfolio">Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -601,34 +672,66 @@
             <div class="about-text reveal">
                 <h3>Who am I?</h3>
                 <p>
-                    I am a 3rd Year Computer Science Engineering student at
-                    <strong>Maturi Venkata Subba Rao Engineering College (MVSR)</strong>,
-                    with strong roots in Data Structures and Algorithms and a growing focus on
-                    Machine Learning and Web Development.
+                    I am a final-year Computer Science Engineering (CSIT) student at
+                    <strong>MVSR Engineering College, Hyderabad</strong> (CGPA: 8.23), with strong roots in
+                    Data Structures and Algorithms and hands-on experience across Machine Learning and
+                    full-stack Web Development.
                 </p>
                 <p>
-                    I enjoy solving complex problems through structured thinking and efficient code.
-                    My interests lie in understanding data, building models, and applying core computer
-                    science principles to develop practical and scalable solutions.
+                    I recently completed a Machine Learning internship at the <strong>Defence Electronics
+                    Research Laboratory (DLRL), DRDO</strong>, where I worked under scientist mentorship across
+                    three independent computer vision projects — progressing from a custom CNN for MNIST digit
+                    classification (~98% accuracy) to transfer learning with ResNet50/VGG16 for brain MRI tumour
+                    classification (~98% accuracy) and a ResNet18/EfficientNet pipeline for multi-class weather
+                    image classification — taking each one from preprocessing through to live deployment.
                 </p>
                 <p>
-                    Aiming for a machine learning–centric role that combines solid programming skills with
+                    I'll be joining Infosys Springboard as a Machine Learning Intern starting September 2026.
+                    I enjoy solving complex problems through structured thinking and efficient code, and I'm
+                    aiming for a machine learning–centric role that combines solid programming skills with
                     data analysis and model development to solve practical, real-world challenges.
                 </p>
                 <div class="stats">
                     <div class="stat-item">
-                        <h4>DSA</h4>
-                        <p>Strong Foundation</p>
+                        <h4>8.23</h4>
+                        <p>CGPA</p>
                     </div>
                     <div class="stat-item">
-                        <h4>ML</h4>
-                        <p>Data & Models</p>
+                        <h4>DLRL</h4>
+                        <p>DRDO ML Intern</p>
                     </div>
                     <div class="stat-item">
                         <h4>Tech Stack</h4>
-                        <p>Python • Java</p>
+                        <p>Python • Java • C</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <h2 class="section-title reveal">Experience</h2>
+        <div class="exp-timeline reveal">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <span class="exp-role">Machine Learning Intern</span>
+                    <span class="exp-date">May 2026 – Jun 2026</span>
+                </div>
+                <span class="exp-org">Defence Electronics Research Laboratory (DLRL), DRDO — Hyderabad</span>
+                <ul class="exp-list">
+                    <li>Worked on applied machine learning and deep learning under scientist mentorship, progressing from core ML/CNN fundamentals to transfer learning and full model deployment across three independent computer vision projects.</li>
+                    <li>Built a custom CNN for MNIST digit classification (~98% accuracy), then applied transfer learning with a pretrained backbone to boost accuracy to 99%; deployed as a live inference app: <a href="https://tl-mnist-oxh0.onrender.com" target="_blank">tl-mnist-oxh0.onrender.com</a></li>
+                    <li>Fine-tuned pretrained CNNs (ResNet50/VGG16) on a labelled brain MRI dataset to classify scans into 4 tumour categories (~98% accuracy); built an end-to-end pipeline from preprocessing to deployment. <a href="https://tumour-detection-two.vercel.app" target="_blank">Live</a> · <a href="https://github.com/PraveenAchary/TumourDetection" target="_blank">Code</a></li>
+                    <li>Designed a transfer-learning pipeline (ResNet18/EfficientNet) for multi-class weather image classification — sunny, rainy, cloudy, foggy — with data augmentation for real-world robustness. <a href="https://weather-classifier-steel.vercel.app" target="_blank">Live</a> · <a href="https://github.com/PraveenAchary/Weather-Classifier" target="_blank">Code</a></li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-header">
+                    <span class="exp-role">Machine Learning Intern (Upcoming)</span>
+                    <span class="exp-date">Starting Sep 2026</span>
+                </div>
+                <span class="exp-org">Infosys Springboard</span>
             </div>
         </div>
     </section>
@@ -638,14 +741,109 @@
         <h2 class="section-title reveal">My Skills</h2>
         <p style="text-align: center; color: var(--text-muted);" class="reveal">Technologies I work with to bring ideas to life.</p>
         <div class="skills-container reveal">
+            <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-tag"><i class="fab fa-java"></i> Java</div>
+            <div class="skill-tag"><i class="fas fa-code"></i> C</div>
+            <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
             <div class="skill-tag"><i class="fab fa-html5"></i> HTML5</div>
             <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</div>
-            <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
-            <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
-            <div class="skill-tag"><i class="fas fa-brain"></i> Machine Learning</div>
             <div class="skill-tag"><i class="fab fa-react"></i> React</div>
             <div class="skill-tag"><i class="fas fa-server"></i> Django</div>
-            <div class="skill-tag"><i class="fas fa-fire"></i> Firebase</div>
+            <div class="skill-tag"><i class="fas fa-server"></i> Django REST Framework</div>
+            <div class="skill-tag"><i class="fas fa-bolt"></i> FastAPI</div>
+            <div class="skill-tag"><i class="fas fa-flask"></i> Flask</div>
+            <div class="skill-tag"><i class="fas fa-brain"></i> Machine Learning</div>
+            <div class="skill-tag"><i class="fas fa-fire"></i> PyTorch</div>
+            <div class="skill-tag"><i class="fas fa-project-diagram"></i> scikit-learn</div>
+            <div class="skill-tag"><i class="fas fa-network-wired"></i> CNNs</div>
+            <div class="skill-tag"><i class="fas fa-exchange-alt"></i> Transfer Learning</div>
+            <div class="skill-tag"><i class="fas fa-table"></i> NumPy / Pandas</div>
+            <div class="skill-tag"><i class="fas fa-chart-bar"></i> Data Visualization</div>
+            <div class="skill-tag"><i class="fas fa-database"></i> MySQL</div>
+            <div class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</div>
+            <div class="skill-tag"><i class="fas fa-database"></i> SQLite</div>
+            <div class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+            <div class="skill-tag"><i class="fas fa-mail-bulk"></i> Postman</div>
+            <div class="skill-tag"><i class="fas fa-cloud"></i> Vercel</div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="container">
+        <h2 class="section-title reveal">Certifications</h2>
+        <p style="text-align: center; color: var(--text-muted);" class="reveal">Courses and programs I've completed.</p>
+        <div class="cert-grid reveal">
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-award"></i></div>
+                <div class="cert-body">
+                    <h4>AI-ML Virtual Internship</h4>
+                    <span class="cert-issuer">EduSkills Foundation, with AICTE & Google for Developers · Jan – Mar 2026</span>
+                    <p>Virtual internship covering applied AI and machine learning fundamentals.</p>
+                    <a href="https://certificate.eduskillsfoundation.org/verify/415f80d9aa6df20ed732/415f80d9aa6df20ed732" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Verify Certificate
+                    </a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-award"></i></div>
+                <div class="cert-body">
+                    <h4>Complete Machine Learning & Data Science – Skill Up</h4>
+                    <span class="cert-issuer">GeeksforGeeks</span>
+                    <p>Mastered core machine learning algorithms, data preprocessing, and statistical analysis techniques; developed predictive models using data science libraries to solve complex data challenges.</p>
+                    <a href="https://www.geeksforgeeks.org/certificate/bb661d2741dcf245440377a10a6db996" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Verify Certificate
+                    </a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-code"></i></div>
+                <div class="cert-body">
+                    <h4>C Programming</h4>
+                    <span class="cert-issuer">Great Learning Academy · Dec 2023</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-code"></i></div>
+                <div class="cert-body">
+                    <h4>Java Programming</h4>
+                    <span class="cert-issuer">Great Learning Academy · 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-code"></i></div>
+                <div class="cert-body">
+                    <h4>OOPs in Python</h4>
+                    <span class="cert-issuer">Great Learning Academy · 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-code"></i></div>
+                <div class="cert-body">
+                    <h4>OOPs in Java</h4>
+                    <span class="cert-issuer">Great Learning Academy · 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-js"></i></div>
+                <div class="cert-body">
+                    <h4>JavaScript Essentials 1 & 2</h4>
+                    <span class="cert-issuer">Cisco Networking Academy, MVSR Engineering College · 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-python"></i></div>
+                <div class="cert-body">
+                    <h4>Python Essentials 1</h4>
+                    <span class="cert-issuer">Cisco Networking Academy, MVSR Engineering College · 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-code"></i></div>
+                <div class="cert-body">
+                    <h4>C Training (85%)</h4>
+                    <span class="cert-issuer">Spoken Tutorial Project, IIT Bombay · 2024</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -717,28 +915,29 @@
                 </div>
             </div>
 
-            <!-- Project 3: Heart Disease Prediction -->
+            <!-- Project 3: Cordex -->
             <div class="project-card reveal">
-                <img src="heart_disease.png" alt="Heart Disease Prediction" class="project-img"
+                <img src="cordex_preview.png" alt="Cordex" class="project-img"
                      onerror="this.style.background='linear-gradient(135deg,#ff0055,#7000ff)';this.style.objectFit='none';">
                 <div class="project-info">
-                    <span class="project-category">Data Science · Machine Learning</span>
-                    <h3 class="project-title">Heart Disease Prediction</h3>
+                    <span class="project-category">Programming Languages · Compilers</span>
+                    <h3 class="project-title">Cordex</h3>
                     <p class="project-desc">
-                        ML model predicting heart disease risk using L1 Logistic Regression and RandomizedSearchCV.
-                        Includes preprocessing, feature scaling, threshold exploration, and actionable feature importance insights.
+                        A custom interpreted programming language built from scratch — lexer, parser, semantic
+                        analyzer, and interpreter. Supports English, Hinglish, and a Cardiology-themed syntax
+                        dialect (keywords like beating, monitor, diagnose), reflecting a personal interest in medicine.
                     </p>
                     <div class="tech-badges">
                         <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Scikit-learn</span>
-                        <span class="tech-badge">Logistic Regression</span>
-                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Django REST</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Interpreters</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/PraveenAchary/Heart-Disease-Prediction" target="_blank" class="project-link">
+                        <a href="https://github.com/PraveenAchary/Cordex" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> View Code <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="https://heart-disease-prediction-afv0zoz7j.vercel.app" target="_blank" class="project-link">
+                        <a href="https://cordex-jtfm.vercel.app" target="_blank" class="project-link">
                             <i class="fas fa-external-link-alt"></i> Live Demo <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
